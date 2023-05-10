@@ -22,12 +22,6 @@ export default class Game {
 		return this.currentPlayer;
 	}
 
-	public getPosFromNumber(num: number): { row: number; column: number } {
-		const row = Math.floor(num / this.columns);
-		const column = num % this.columns;
-		return { row, column };
-	}
-
 	public initBoard(): void {
 		for (let i = 0; i < this.rows; i++) {
 			this.board[i] = [];
@@ -198,10 +192,6 @@ export default class Game {
 		this.gameOver = false;
 		this.currentPlayer = 1;
 		this.IA = false;
-	}
-
-	public getWinner(): number {
-		return this.currentPlayer;
 	}
 
 	public getHistoric(): string[] {
